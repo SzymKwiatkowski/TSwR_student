@@ -1,5 +1,6 @@
 import numpy as np
 from .controller import Controller
+from models.manipulator_model import ManipulatorModel
 
 
 class MMAController(Controller):
@@ -8,10 +9,12 @@ class MMAController(Controller):
         # I:   m3=0.1,  r3=0.05
         # II:  m3=0.01, r3=0.01
         # III: m3=1.0,  r3=0.3
-        self.models = [None, None, None]
+        self.models = [ManipulatorModel(Tp=Tp, m3=0.1, r3=0.05), 
+                       ManipulatorModel(Tp=Tp, m3=0.01, r3=0.01),
+                       ManipulatorModel(Tp=Tp, m3=1.0, r3=0.3)]
         self.i = 0
 
-    def choose_model(self, x):
+    def choose_model(self, x, u):
         # TODO: Implement procedure of choosing the best fitting model from self.models (by setting self.i)
         pass
 
