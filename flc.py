@@ -17,7 +17,7 @@ end = 10
 """
 Switch to FeedbackLinearizationController as soon as you implement it
 """
-controller = FeedbackLinearizationController(Tp)
+controller = FeedbackLinearizationController(Tp=Tp, m3=1.0, r3=0.3, Kd=40.0, Kp=40.0)
 # controller = DummyController(Tp)
 
 """

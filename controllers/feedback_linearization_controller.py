@@ -4,11 +4,11 @@ from .controller import Controller
 
 
 class FeedbackLinearizationController(Controller):
-    def __init__(self, Tp, m3=0.0, r3=0.01):
+    def __init__(self, Tp, m3=0.0, r3=0.01, Kd=100.0, Kp= 100.0):
         self.Tp = Tp
         self.model = ManipulatorModel(Tp, m3=m3, r3=r3)
-        self.Kd = 100.0
-        self.Kp = 100.0
+        self.Kd = Kd
+        self.Kp = Kp
 
     def calculate_control(self, x, q_r, q_r_dot, q_r_ddot):
         """
